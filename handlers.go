@@ -39,7 +39,7 @@ func serveWs(w http.ResponseWriter, r *http.Request) {
 
 	currentStatus := models.WebsocketData{
 		Timestamp: time.Now().Unix() * 1000,
-		Analog: model.AnalogData{
+		Analog: models.AnalogData{
 			Capacity:    0,
 			Battery:     0,
 			Temperature: 0,

@@ -60,7 +60,7 @@ func (uc UpdateController) OnUpdateContext(c *gin.Context) {
 		json_str, _ := json.Marshal(cr)
 		fmt.Println(string(json_str))
 		t := time.Now()
-		data := model.WebsocketData{
+		data := models.WebsocketData{
 			Timestamp: t.Unix() * 1000,
 			Analog: models.AnalogData{
 				Capacity:    capacity_f,
