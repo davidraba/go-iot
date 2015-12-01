@@ -1,0 +1,9 @@
+{"subscriptionId":"564c9fb6d6c17c3259ae3adf","originator":"localhost","restriction":{"attributeExpression":""},
+"contextResponses":[{"contextElement":{"id":"UBK2DD4EFCC-3C23-11E5-9AFC-1F78C59BFD03",
+"type":"SILO",
+"isPattern":"false",
+"attributes":[
+	{"name":"battery_c","type":"double","value":"95.12"},
+	{"name":"temperature_c","type":"double","value":"31.6"},
+	{"name":"available_percentage","type":"double","value":"30.52"}
+]},"statusCode":{"name":0}}]}
