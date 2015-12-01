@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"time"
 
-	"ubikwa/backend/microservice/ubk-silo/main/models"
+	"github.com/davidraba/go-iot/models"
 	"ubikwa/backend/util/conversions"
 	"ubikwa/backend/util/gongiutil"
 	"ubikwa/backend/util/gongsi"
@@ -60,7 +60,7 @@ func (uc UpdateController) OnUpdateContext(c *gin.Context) {
 		json_str, _ := json.Marshal(cr)
 		fmt.Println(string(json_str))
 		t := time.Now()
-		data := models.WebsocketData{
+		data := model.WebsocketData{
 			Timestamp: t.Unix() * 1000,
 			Analog: models.AnalogData{
 				Capacity:    capacity_f,

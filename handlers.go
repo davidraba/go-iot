@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/davidraba/go-iot/jobs"
-	"github.com/davidraba/go-iot/model"
+	"github.com/davidraba/go-iot/models"
 	"github.com/gorilla/websocket"
 )
 
@@ -37,7 +37,7 @@ func serveWs(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	currentStatus := model.WebsocketData{
+	currentStatus := models.WebsocketData{
 		Timestamp: time.Now().Unix() * 1000,
 		Analog: model.AnalogData{
 			Capacity:    0,
