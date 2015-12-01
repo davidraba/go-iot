@@ -13,9 +13,9 @@ import (
 	"time"
 
 	"github.com/davidraba/go-iot/models"
-	"ubikwa/backend/util/conversions"
-	"ubikwa/backend/util/gongiutil"
-	"ubikwa/backend/util/gongsi"
+	"github.com/davidraba/go-iot/util/conversions"
+	"github.com/davidraba/go-iot/util/gongiutil"
+	"github.com/davidraba/go-iot/util/gongsi"
 )
 
 type (
