@@ -7,7 +7,6 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"net/http"
 	"os"
@@ -22,7 +21,6 @@ import (
 )
 
 var (
-	addr      = flag.String("addr", ":80", "http service address")
 	homeTempl = template.Must(template.New("").Parse(homeHTML))
 	filename  string
 	upgrader  = websocket.Upgrader{
@@ -134,8 +132,12 @@ func main() {
 	// -----------------------------------------------------------------------
 	// LAUNCH SERVER
 	// -----------------------------------------------------------------------
+	port := "8081"
+	if os.Getenv("HTTP_PLATFORM_PORT") != "" {
+		port = os.Getenv("HTTP_PLATFORM_PORT")
+	}
 	s := &http.Server{
-		Addr:    "0.0.0.0:8081",
+		Addr:    ":" + port,
 		Handler: r,
 	}
 
