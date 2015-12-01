@@ -22,7 +22,7 @@ import (
 )
 
 var (
-	addr      = flag.String("addr", ":8081", "http service address")
+	addr      = flag.String("addr", ":80", "http service address")
 	homeTempl = template.Must(template.New("").Parse(homeHTML))
 	filename  string
 	upgrader  = websocket.Upgrader{
