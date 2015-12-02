@@ -263,7 +263,7 @@ const homeHTML = `
 		            });
 		        });
 				
-		        var context = cubism.context().serverDelay(5).step(1e3).size(1440);
+		        var context = cubism.context().serverDelay(new Date(2015, 12, 1) - Date.now()).step(864e5).size(1440);
 		        
 				var metric = function (key, title) {
 		            var rt = realtime[key];
