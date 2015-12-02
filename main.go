@@ -175,7 +175,7 @@ const homeHTML = `
 		
 		var g = new JustGage({
 		    id: "g1",
-		    value: getRandomInt(0, gageValue),
+		    value: 0,
 		    min: 0,
 		    max: gageValue,
 		    relativeGaugeSize: true,
@@ -308,19 +308,19 @@ const homeHTML = `
 		            .call(context.rule());
 		        charts = {
 		            capacity: {
-		                title: 'Capacity',
-		                unit: 'V',
-		                extent: [0, 100]
+		                title: 'RSSI',
+		                unit: 'dB',
+		                extent: [-256, 0]
 		            },
 		            battery: {
 		                title: 'Battery',
 		                unit: 'mA',
-		                extent: [3000, 5000]
+		                extent: [0, 256]
 		            },
 		            temp: {
-		                title: 'Temperature',
+		                title: 'LQ',
 		                unit: '\u00b0C',
-		                extent: [-20, 60]
+		                extent: [0, 255]
 		            }
 		        };
 		        Object.keys(charts).map(function (key) {
