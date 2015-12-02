@@ -49,11 +49,14 @@ func (uc UpdateController) OnUpdateContext(c *gin.Context) {
 		// Depending on ID send channel updates....
 		Id, _ := gongsiutil.GetId(&cr)
 		_ = Id
-		battery, _ := gongsiutil.FindAttribute(&cr, string("battery_c"))
-		temperature, _ := gongsiutil.FindAttribute(&cr, string("temperature_c"))
-		capacity, _ := gongsiutil.FindAttribute(&cr, string("available_percentage"))
+		//		battery, _ := gongsiutil.FindAttribute(&cr, string("battery_c"))
+		//		temperature, _ := gongsiutil.FindAttribute(&cr, string("temperature_c"))
+		//		capacity, _ := gongsiutil.FindAttribute(&cr, string("available_percentage"))
 
-		battery_f, _ := conversions.Float64ForValue(battery)
+		temperature, _ := gongsiutil.FindAttribute(&cr, string("lqi"))
+		capacity, _ := gongsiutil.FindAttribute(&cr, string("rssi"))
+
+		battery_f := 0.0
 		temperature_f, _ := conversions.Float64ForValue(temperature)
 		capacity_f, _ := conversions.Float64ForValue(capacity)
 
