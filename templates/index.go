@@ -44,7 +44,7 @@ const Index = `
 		
 		}(jQuery));
 
-		function inlineSVG(dimx, dimy)
+		function inlineSVG()
 		{
 		    var SVGFile="images/silo.svg"
 		    var loadXML = new XMLHttpRequest;
@@ -78,14 +78,14 @@ const Index = `
 			}
 		
         $(document).ready(function () {
-			inlineSVG(500,500);
+			inlineSVG();
 			$('#ubkSilo').waitUntilExists(resizeSVG);
         });
 		// Accesss
 		$('#ubkName tspan').text('#Silo1');
 		$('#ubkAvailable tspan').text('82.1%');
-		$('#ubkCapacity tspan').html('25 m&#179;');
-		$('#ubkContent tspan').text('154889Kg');
+		$('#ubkCapacity tspan').html('26.00 m&#179;');
+		$('#ubkContent tspan').text('154889 Kg');
 		$('#ubkVolume tspan').html('22.10 m&#179;');
 		$('#level10').hide();
 			
