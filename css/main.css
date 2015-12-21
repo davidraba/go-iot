@@ -1,0 +1,28 @@
+/*!
+ * Ubikwa SLU v1.0 (http://www.ubikwa.com)
+ * Copyright 2012-2016 UBIKWA SLU.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+       text-align: center;
+       padding: 0px;
+       margin: 0px;
+   }
+/* clearfix */
+
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.clear {
+    *zoom: 1;
+}
