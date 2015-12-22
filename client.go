@@ -1,15 +1,18 @@
 package main
 
 import (
+	"encoding/json"
+	"github.com/davidraba/go-iot/models"
 	"github.com/gorilla/websocket"
 	"time"
 )
 
 type client struct {
 	ws     *websocket.Conn
-	send   chan []byte
+	send   chan models.SiloData
 	sn     string
 	status string
+	config models.SiloMeasureSimpleRequest
 }
 
 func (c *client) reader() {
@@ -49,7 +52,7 @@ func (c *client) writer(serialnumber string) {
 
 	for {
 		select {
-		case message, ok := <-c.send:
+		case data, ok := <-c.send:
 			if !ok { // Si no Ok, no està viu, tanca la connexió
 				c.ws.SetWriteDeadline(time.Now().Add(writeWait))
 				if err := c.ws.WriteMessage(websocket.CloseMessage, []byte{}); err != nil {
@@ -58,6 +61,23 @@ func (c *client) writer(serialnumber string) {
 				return
 			}
 			c.ws.SetWriteDeadline(time.Now().Add(writeWait))
+
+			// Compute distance according client configuration
+			c.config.Distancia = data.Distance
+			volume := c.config.EvalDistance()
+
+			t := time.Now()
+			wsData := models.WebsocketData{
+				Timestamp: t.Unix() * 1000,
+				Analog: models.AnalogData{
+					Percentage:    volume.ContentPerc,
+					Capacity:      volume.SiloCapacityM3,
+					WeightCurrent: volume.ContentWeightKg,
+					VolumeCurrent: volume.ContentVolumeM3,
+				},
+			}
+
+			message, _ := json.Marshal(wsData)
 			if err := c.ws.WriteMessage(websocket.TextMessage, message); err != nil {
 				return
 			}

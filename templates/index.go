@@ -13,6 +13,171 @@ const Index = `
 </div>
 <script type="text/javascript">
 
+		function json_ws( on_msg ) {
+		        if (!("WebSocket" in window)) {
+		            alert("Use a browser supporting websockets");
+		        }				
+		              var conn = new WebSocket("ws://{{.Host}}/ws?device={{.Device}}&as=578&ds=340&cs=204&od=68&d=680.0");
+		
+		              conn.onclose = function(evt) {
+		                  document.getElementById("fileData").textContent = 'Connection closed';
+		              }
+		
+		              conn.onmessage = function(evt) {		 					
+					try {
+						data = JSON.parse(evt.data);
+					}
+		            catch (SyntaxError) {
+		                console.log("Invalid data: " + evt.data);
+		                return;
+		            }
+		            if (data)
+		                on_msg(data);						
+		              }
+		
+			window.onbeforeunload = function() {
+		        			 conn.onclose = function() {};
+		        			 conn.close();
+			}
+		}
+		
+		function updateSiloLevels( percent ) {
+			if (percent > 90) { 
+			      $('#level10').show();
+			      $('#level9').show();
+			      $('#level8').show();
+			      $('#level7').show();
+			      $('#level6').show();
+			      $('#level5').show();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 80) { 
+			      $('#level10').hide();
+			      $('#level9').show();
+			      $('#level8').show();
+			      $('#level7').show();
+			      $('#level6').show();
+			      $('#level5').show();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 70) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').show();
+			      $('#level7').show();
+			      $('#level6').show();
+			      $('#level5').show();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 60) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').show();
+			      $('#level6').show();
+			      $('#level5').show();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 50) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').show();
+			      $('#level5').show();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 40) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').hide();
+			      $('#level5').show();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 30) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').hide();
+			      $('#level5').hide();
+			      $('#level4').show();
+			      $('#level3').hide();
+			}
+			else if (percent > 20) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').hide();
+			      $('#level5').hide();
+			      $('#level4').hide();
+			      $('#level3').show();
+			}
+			else if (percent > 10) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').hide();
+			      $('#level5').hide();
+			      $('#level4').hide();
+			      $('#level3').hide();
+			      $('#level2').show();
+			      $('#level1').show();				
+			      $('#level0').show();
+			}
+			else if (percent > 5) { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').hide();
+			      $('#level5').hide();
+			      $('#level4').hide();
+			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').show();				
+			      $('#level0').show();
+			}
+			else { 
+			      $('#level10').hide();
+			      $('#level9').hide();
+			      $('#level8').hide();
+			      $('#level7').hide();
+			      $('#level6').hide();
+			      $('#level5').hide();
+			      $('#level4').hide();
+			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();
+			      $('#level0').show();
+			}
+			
+		}
+		
+		/* This websocket sends homogenous messages in the form
+         * {timestamp: 1234567, analog: {capactity: 3.3, battery: 2.3, temp: 20}}
+         * where timestamp is a Unix timestamp
+         */
+        json_ws(function(data) {
+			// Accesss
+			$('#ubkName tspan').text('#Silo1');
+			$('#ubkAvailable tspan').text( data.analog["percentage"] + '%');
+			$('#ubkCapacity tspan').html(data.analog["percentage"] + 'm&#179;');
+			$('#ubkContent tspan').text(data.analog["weight"] +'Kg');
+			$('#ubkVolume tspan').html(data.analog["volume"] + '0m&#179;');
+			updateSiloLevels(data.analog["percentage"]);
+        });
+
 		(function ($) {
 		
 		/**
@@ -81,13 +246,6 @@ const Index = `
 			inlineSVG();
 			$('#ubkSilo').waitUntilExists(resizeSVG);
         });
-		// Accesss
-		$('#ubkName tspan').text('#Silo1');
-		$('#ubkAvailable tspan').text('82.1%');
-		$('#ubkCapacity tspan').html('26.00 m&#179;');
-		$('#ubkContent tspan').text('154889 Kg');
-		$('#ubkVolume tspan').html('22.10 m&#179;');
-		$('#level10').hide();
 			
 </script>
 

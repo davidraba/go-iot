@@ -6,11 +6,11 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
-	"time"
+	//"time"
 
 	"github.com/davidraba/go-iot/models"
 	"github.com/davidraba/go-iot/util/conversions"
@@ -52,32 +52,11 @@ func (uc UpdateController) OnUpdateContext(c *gin.Context) {
 		//		battery, _ := gongsiutil.FindAttribute(&cr, string("battery_c"))
 		//		temperature, _ := gongsiutil.FindAttribute(&cr, string("temperature_c"))
 		//		capacity, _ := gongsiutil.FindAttribute(&cr, string("available_percentage"))
+		distance, _ := gongsiutil.FindAttribute(&cr, string("mean_distance"))
+		d, _ := conversions.Float64ForValue(distance)
 
-		temperature, _ := gongsiutil.FindAttribute(&cr, string("lqi"))
-		capacity, _ := gongsiutil.FindAttribute(&cr, string("rssi"))
-
-		battery_f := 0.0
-		temperature_f, _ := conversions.Float64ForValue(temperature)
-		capacity_f, _ := conversions.Float64ForValue(capacity)
-
-		json_str, _ := json.Marshal(cr)
-		fmt.Println(string(json_str))
-		t := time.Now()
-		data := models.WebsocketData{
-			Timestamp: t.Unix() * 1000,
-			Analog: models.AnalogData{
-				Capacity:    capacity_f,
-				Battery:     battery_f,
-				Temperature: temperature_f,
-			},
-		}
-		// {"timestamp":1448021916,"analog":{"capacity":25.520000457763672,"battery":95.12000274658203,"temp":31.600000381469727}}
-		if b, err := json.Marshal(data); err == nil {
-			h.unicast <- DirectMessage{Id, string(b)}
-			//h.broadcast <- string(b)
-		}
-
-		// TODO: Depending on device SerialNumber send to client
+		data := models.SiloData{Distance: d, Temperature: 35, Humidity: 40}
+		h.unicast <- DirectMessage{Id, data}
 	}
 
 	//////////////////////////////////////////////////////////////////////////

@@ -1,9 +1,7 @@
 {"subscriptionId":"564c9fb6d6c17c3259ae3adf","originator":"localhost","restriction":{"attributeExpression":""},
-"contextResponses":[{"contextElement":{"id":"UBK2DD4EFCC-3C23-11E5-9AFC-1F78C59BFD03",
+"contextResponses":[{"contextElement":{"id":"UBKD334F21E-3C23-11E5-8494-C3AD4A89321E",
 "type":"SILO",
 "isPattern":"false",
 "attributes":[
-	{"name":"battery_c","type":"double","value":"95.12"},
-	{"name":"temperature_c","type":"double","value":"31.6"},
-	{"name":"available_percentage","type":"double","value":"30.52"}
+	{"name":"mean_distance","type":"double","value":"412"}
 ]},"statusCode":{"name":0}}]}

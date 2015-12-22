@@ -1,8 +1,12 @@
 package main
 
+import (
+	"github.com/davidraba/go-iot/models"
+)
+
 type DirectMessage struct {
 	sn   string
-	mesg string
+	data models.SiloData
 }
 
 type hub struct {
@@ -11,7 +15,7 @@ type hub struct {
 	unicast    chan DirectMessage
 	register   chan *client
 	unregister chan *client
-	content    string
+	data       models.SiloData
 	sn         string
 }
 
@@ -20,7 +24,7 @@ func (h *hub) Run() {
 		select {
 		case c := <-h.register:
 			h.clients[c] = true
-			c.send <- []byte(c.status)
+			c.send <- models.SiloData{}
 			break
 
 		case c := <-h.unregister:
@@ -31,13 +35,8 @@ func (h *hub) Run() {
 			}
 			break
 
-		case m := <-h.broadcast:
-			h.content = m
-			h.broadcastMessage()
-			break
-
 		case n := <-h.unicast:
-			h.content = n.mesg
+			h.data = n.data
 			h.sn = n.sn
 			h.unicastMessage()
 			break
@@ -46,25 +45,11 @@ func (h *hub) Run() {
 	}
 }
 
-func (h *hub) broadcastMessage() {
-	for c := range h.clients {
-		select {
-		case c.send <- []byte(h.content):
-			break
-
-		// We can't reach the client
-		default:
-			close(c.send)
-			delete(h.clients, c)
-		}
-	}
-}
-
 func (h *hub) unicastMessage() {
 	for c := range h.clients {
 		if c.sn == h.sn {
 			select {
-			case c.send <- []byte(h.content):
+			case c.send <- h.data:
 				break
 
 			// We can't reach the client

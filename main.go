@@ -64,7 +64,6 @@ var h = hub{
 	register:   make(chan *client),
 	unregister: make(chan *client),
 	clients:    make(map[*client]bool),
-	content:    "",
 	sn:         "",
 }
 

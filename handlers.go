@@ -2,14 +2,17 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"time"
 
+	"github.com/gorilla/websocket"
+
 	"github.com/davidraba/go-iot/jobs"
 	"github.com/davidraba/go-iot/models"
-	"github.com/gorilla/websocket"
+	"github.com/davidraba/go-iot/util/conversions"
 )
 
 type PayloadCollection struct {
@@ -40,20 +43,48 @@ func serveWs(w http.ResponseWriter, r *http.Request) {
 	currentStatus := models.WebsocketData{
 		Timestamp: time.Now().Unix() * 1000,
 		Analog: models.AnalogData{
-			Capacity:    0,
-			Battery:     0,
-			Temperature: 0,
+			Percentage:    0,
+			Capacity:      0,
+			WeightCurrent: 0,
+			VolumeCurrent: 0,
 		},
 	}
+
 	status_str := ""
 	if b, err := json.Marshal(currentStatus); err == nil {
 		status_str = string(b)
 	}
+
+	// Params POST:
+	//   as: Altura Silo
+	//   ds: Diametro Silo
+	//   cs: Cono Silo
+	//   d: Densidad material
+	//   od : Offset distance. Distáncia desde el sensor al contenido(lleno)
+	//   device: Numero de serie dispositivo
+	// Sample:
+	//   as=578&ds=340&cs=204&od=68&d=680.0&device=UBKD334F21E-3C23-11E5-8494-C3AD4A89321E
+	as, _ := conversions.IntForValue(r.FormValue("as"))
+	ds, _ := conversions.IntForValue(r.FormValue("ds"))
+	cs, _ := conversions.IntForValue(r.FormValue("cs"))
+	od, _ := conversions.IntForValue(r.FormValue("od"))
+	dens, _ := conversions.Float64ForValue(r.FormValue("d"))
+
+	fmt.Println(r.FormValue("as"), as, ds, cs, od, dens)
+	q := models.SiloMeasureSimpleRequest{
+		SiloHeightCm:         as,
+		SiloDiameterCm:       ds,
+		SiloHeightConeCm:     cs,
+		SiloOffsetDistanceCm: od,
+		ContentDensityKgm3:   dens,
+	}
+
 	c := &client{
-		send:   make(chan []byte, maxMessageSize),
+		send:   make(chan models.SiloData, maxMessageSize),
 		status: status_str,
 		ws:     ws,
 		sn:     r.FormValue("device"),
+		config: q,
 	}
 
 	h.register <- c
