@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -9,7 +7,6 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="ubkSilo"
    x="0px"
@@ -522,9 +519,6 @@
        id="rect19"
        style="fill:#1d1d1b" /></g><g
      id="g173"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90"
      transform="translate(-314.94104,-102.94211)"><polygon
        style="fill:#1d1d1b"
        id="polygon175"
@@ -548,9 +542,6 @@
      id="polygon183"
      points="392.775,138.086 332.311,138.091 332.311,225.764 358.311,277.22 367.311,277.22 392.775,225.764 "
      stroke-miterlimit="10"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90"
      transform="translate(-314.94104,-102.94211)" /><rect
      x="324.914"
      y="258.62299"
@@ -560,9 +551,6 @@
      height="18.597"
      id="level0"
      style="fill:#df3214;stroke:#ffffff;stroke-miterlimit:10"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90"
      transform="translate(-314.94104,-102.94211)"
      inkscape:label="#level0" /><rect
      x="324.914"
@@ -573,9 +561,6 @@
      height="18.597"
      id="level1"
      style="fill:#f6aea0;stroke:#ffffff;stroke-miterlimit:10"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90"
      transform="translate(-314.94104,-102.94211)" /><use
      xlink:href="#SVGID_9_"
      overflow="visible"
@@ -586,14 +571,8 @@
      y="0"
      width="595.28003"
      height="841.89001"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90"
      transform="translate(-314.94104,-102.94211)" /><g
      id="level3"><rect
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
        transform="matrix(0.98522186,0,0,1.0001264,-422.06553,-103.28871)"
        style="fill:#edd20f;stroke:#ffffff;stroke-miterlimit:10"
        id="rect247"
@@ -603,9 +582,6 @@
        clip-path="url(#SVGID_14_)"
        y="258.62299"
        x="439.08701" /><rect
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
        transform="matrix(0.98522186,0,0,1.0001264,-422.06553,-103.28871)"
        style="fill:#fce229;stroke:#ffffff;stroke-miterlimit:10"
        id="rect249"
@@ -615,9 +591,6 @@
        clip-path="url(#SVGID_14_)"
        y="238.493"
        x="439.08701" /><rect
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
        transform="matrix(0.98522186,0,0,1.0001264,-422.06553,-103.28871)"
        style="fill:#f9ea93;stroke:#ffffff;stroke-miterlimit:10"
        id="rect251"
@@ -636,9 +609,7 @@
      id="level10"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><rect
+      /><rect
      x="425.85501"
      y="553.617"
      clip-path="url(#SVGID_8_)"
@@ -648,9 +619,7 @@
      id="level4"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><rect
+      /><rect
      x="425.85501"
      y="533.48798"
      clip-path="url(#SVGID_8_)"
@@ -660,9 +629,7 @@
      id="level5"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><rect
+     /><rect
      x="425.85501"
      y="513.35699"
      clip-path="url(#SVGID_8_)"
@@ -672,9 +639,7 @@
      id="level6"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-416.38701,-397.80429)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><rect
+      /><rect
      x="425.85501"
      y="493.22601"
      clip-path="url(#SVGID_8_)"
@@ -684,9 +649,7 @@
      id="level7"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><rect
+     /><rect
      x="425.85501"
      y="473.095"
      clip-path="url(#SVGID_8_)"
@@ -696,9 +659,7 @@
      id="level8"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><rect
+      /><rect
      x="425.85501"
      y="452.96399"
      clip-path="url(#SVGID_8_)"
@@ -707,10 +668,7 @@
      height="18.598"
      id="level9"
      style="fill:#82b23e;stroke:#ffffff;stroke-miterlimit:10"
-     transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /><use
+     transform="translate(-415.94109,-398.47316)"/><use
      xlink:href="#SVGID_7_"
      overflow="visible"
      stroke-miterlimit="10"
@@ -721,6 +679,11 @@
      width="595.28003"
      height="841.89001"
      transform="translate(-415.94109,-398.47316)"
-     inkscape:export-filename="/home/david/go-programs/src/github.com/davidraba/go-iot/images/SILO2.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" /></svg>
+     />
+	
+	
+	
+	
+	
+	
+	</svg>
