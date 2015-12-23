@@ -118,6 +118,7 @@ func main() {
 	r.StaticFile("/favicon.ico", "./images/favicon.ico")
 	r.Static("/css", "./css")
 	r.Static("/images", "./images")
+	r.Static("/scripts", "./scripts")
 
 	// -----------------------------------------------------------------------
 	// ROUTE LIST

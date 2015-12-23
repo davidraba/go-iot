@@ -8,6 +8,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:svidget="http://www.svidget.org/svidget"
+   svidget:version="0.3.0"
    version="1.1"
    id="ubkSilo"
    x="0px"
@@ -362,7 +364,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
        y="22.813643"
        x="103.76925"
-       id="tspan3237"
+       id="ubkName_span"
        sodipodi:role="line">#Silo1</tspan></text>
 <text
      transform="scale(1.0027175,0.99728986)"
@@ -440,7 +442,7 @@
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#56bbc7;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
        y="68.822586"
        x="106.10021"
-       id="tspan3237-5-3"
+       id="ubkAvailable_span"
        sodipodi:role="line">82%</tspan></text>
 <text
      transform="scale(1.0027175,0.99728986)"
@@ -453,7 +455,7 @@
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#56bbc7;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
        y="113.18068"
        x="104.98025"
-       id="tspan3237-5-3-7"
+       id="ubkCapacity_span"
        sodipodi:role="line">26.09m</tspan></text>
 <text
      transform="scale(1.0027175,0.99728986)"
@@ -466,7 +468,7 @@
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#56bbc7;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
        y="177.52727"
        x="104.98022"
-       id="tspan3237-5-3-7-4"
+       id="ubkContent_span"
        sodipodi:role="line">154503Kg</tspan></text>
 <text
      transform="scale(1.0027175,0.99728986)"
@@ -479,7 +481,7 @@
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#56bbc7;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
        y="223.58144"
        x="104.53555"
-       id="tspan3237-5-3-7-4-0"
+       id="ubkVolume_span"
        sodipodi:role="line">22.16m</tspan></text>
 <g
      id="g3"
@@ -550,17 +552,17 @@
      stroke-miterlimit="10"
      width="74"
      height="18.597"
-     id="level0"
+     id="level1"
      style="fill:#df3214;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-314.94104,-102.94211)"
-     inkscape:label="#level0" /><rect
+     inkscape:label="#level1" /><rect
      x="324.914"
      y="238.493"
      clip-path="url(#SVGID_10_)"
      stroke-miterlimit="10"
      width="74"
      height="18.597"
-     id="level1"
+     id="level2"
      style="fill:#f6aea0;stroke:#ffffff;stroke-miterlimit:10"
      transform="translate(-314.94104,-102.94211)" /><use
      xlink:href="#SVGID_9_"
@@ -673,4 +675,260 @@
      y="0"
      width="595.28003"
      height="841.89001"
-     transform="translate(-415.94109,-398.47316)" /></svg>
+     transform="translate(-415.94109,-398.47316)" />
+	
+	<svidget:params>
+		<!-- data params -->
+		<svidget:param name="deviceNumber" shortname="device" type="string" coerce="true" group="data" defValue="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" description="" onset="handleDataParamSet" />
+		<svidget:param name="nameSilo" shortname="name" type="string"  coerce="true" group="data" defValue="Silo1" description="" onset="handleDataParamSet" />
+		<svidget:param name="alcadaSilo" shortname="as" type="number" subtype="integer" coerce="true" group="data" defValue="578" description="" />
+		<svidget:param name="diametreSilo" shortname="ds" type="number" subtype="integer" coerce="true" group="data" defvalue="340" description=""  />
+		<svidget:param name="ConeSilo" shortname="cs" type="number" subtype="integer" coerce="true" group="data" defvalue="204" description=""  />
+		<svidget:param name="OffsetDevice" shortname="od" type="number" subtype="integer" coerce="true" group="data" defvalue="68" description="" />
+		<svidget:param name="Densitat" shortname="d"  type="number" subtype="integer" coerce="true" group="data" defvalue="680.0" description=""  />
+		<svidget:param name="Updated" shortname="up"  type="number" subtype="integer" coerce="true" group="data" defvalue="680.0" description="" onset="handleUpdateParamSet" />
+	</svidget:params>
+	
+    <script type="application/javascript" >
+		<![CDATA[	
+		
+			/* Misc */
+			function checkNull(item, backupItem) {
+				return item != null ? item : backupItem;
+			}
+
+			// param variables
+			var _device = 'UBKD334F21E-3C23-11E5-8494-C3AD4A89321E';
+			var _name = 'Silo1';
+			var _as = 578;
+			var _ds = 340;
+			var _cs = 204;
+			var _od = 68;
+			var _d = 680;
+			var _loaded = false;
+	
+			/* Param Events */
+			function loadParams() {
+				var widget = svidget.$;
+				_device = checkNull(widget.param("deviceNumber").value(), _device);
+				_name = checkNull(widget.param("nameSilo").value(), _name);
+				_as = checkNull(widget.param("alcadaSilo").value(), _as);
+				console.log(_as);
+				_ds = checkNull(widget.param("diametreSilo").value(), _ds);
+				_cs = checkNull(widget.param("ConeSilo").value(), _cs);
+				_od = checkNull(widget.param("OffsetDevice").value(), _od);
+				_d = checkNull(widget.param("Densitat").value(), _d);
+			}
+		
+		// this handler is invoked when params Update is set
+		function handleUpdateParamSet(e) {
+			if (!_loaded) return;
+			console.log('handleLabelParamsSet');
+			var widget = svidget.$;
+			loadParams();
+			
+			/* This websocket sends homogenous messages in the form
+	         * {timestamp: 1234567, analog: {percentage: 3.3, capacity: 2.3, weight: 20, volume: 20}}
+	         * where timestamp is a Unix timestamp
+	         */
+	        json_ws(function(data) {
+				// Access
+				console.log('New data...');
+				Snap("#ubkName").select("tspan").node.innerHTML = "#"+_name;			
+				Snap("#ubkAvailable").select("tspan").node.innerHTML = data.analog["percentage"] + '%';					
+				Snap("#ubkCapacity").select("tspan").node.innerHTML = data.analog["capacity"] + 'm&#179;';					
+				Snap("#ubkContent").select("tspan").node.innerHTML = data.analog["weight"] +'Kg';					
+				Snap("#ubkVolume").select("tspan").node.innerHTML = data.analog["volume"] + '0m&#179;';					
+
+				updateSiloLevels(data.analog["percentage"]);
+	        });										
+		}
+		
+		
+		function waitTillLoaded() {
+			// this is temp hack to give chance for page to pass params, if no page then we are in standalone mode
+			window.setTimeout(function () {
+				if (svidget.$.populatedFromPage()) return;			
+				}, 100);	
+		}
+						
+		function updateSiloLevels( percent ) {		
+			if (percent > 90) { 
+			      Snap("#level10").attr("display", "");
+			      Snap("#level9").attr("display", "");
+			      Snap("#level8").attr("display", "");
+			      Snap("#level7").attr("display", "");
+			      Snap("#level6").attr("display", "");
+			      Snap("#level5").attr("display", "");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");			
+			}
+			else if (percent > 80) {
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "");
+			      Snap("#level8").attr("display", "");
+			      Snap("#level7").attr("display", "");
+			      Snap("#level6").attr("display", "");
+			      Snap("#level5").attr("display", "");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");			
+			}
+			else if (percent > 70) {
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "");
+			      Snap("#level7").attr("display", "");
+			      Snap("#level6").attr("display", "");
+			      Snap("#level5").attr("display", "");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");			
+			}
+			else if (percent > 60) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "");
+			      Snap("#level6").attr("display", "");
+			      Snap("#level5").attr("display", "");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");			
+			}
+			else if (percent > 50) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "");
+			      Snap("#level5").attr("display", "");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");				
+			}
+			else if (percent > 40) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "none");
+			      Snap("#level5").attr("display", "");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");				
+			}
+			else if (percent > 30) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "none");
+			      Snap("#level5").attr("display", "none");
+			      Snap("#level4").attr("display", "");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");				
+			}
+			else if (percent > 20) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "none");
+			      Snap("#level5").attr("display", "none");
+			      Snap("#level4").attr("display", "none");
+			      Snap("#level3").attr("display", "");
+			      Snap("#level2").attr("display", "none");				
+			      Snap("#level1").attr("display", "none");				
+			}
+			else if (percent > 10) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "none");
+			      Snap("#level5").attr("display", "none");
+			      Snap("#level4").attr("display", "none");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "");			
+			      Snap("#level1").attr("display", "");			
+			}
+			else if (percent > 5) { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "none");
+			      Snap("#level5").attr("display", "none");
+			      Snap("#level4").attr("display", "none");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "");		
+			}
+			else { 
+			      Snap("#level10").attr("display", "none");
+			      Snap("#level9").attr("display", "none");
+			      Snap("#level8").attr("display", "none");
+			      Snap("#level7").attr("display", "none");
+			      Snap("#level6").attr("display", "none");
+			      Snap("#level5").attr("display", "none");
+			      Snap("#level4").attr("display", "none");
+			      Snap("#level3").attr("display", "none");
+			      Snap("#level2").attr("display", "none");
+			      Snap("#level1").attr("display", "none");
+			}
+		}
+	
+			/* Loading */
+			function init() {
+				console.log('init');
+				waitTillLoaded();
+				_loaded = true;
+			}	
+			window.addEventListener('load', init, false);	
+			
+			/* Connect to backend and open websocked */
+	    	function json_ws( on_msg ) {
+					console.log('Connecting...');
+			        if (!("WebSocket" in window)) {
+			            alert("Use a browser supporting websockets");
+			        }
+				  console.log("ws://localhost:8081/ws?device="+_device+"&as="+_as+"&ds="+_ds+"&cs="+_cs+"&od="+_od+"&d="+_d);
+					var conn = new WebSocket("ws://localhost:8081/ws?device="+_device+"&as="+_as+"&ds="+_ds+"&cs="+_cs+"&od="+_od+"&d="+_d);
+					//var conn = new WebSocket("ws://localhost:8081/ws?device=UBKD334F21E-3C23-11E5-8494-C3AD4A89321E&as=578&ds=340&cs=204&od=68&d=680.0");
+					
+			              conn.onclose = function(evt) {
+								console.log('Connection closed.');
+//			                  document.getElementById("fileData").textContent = 'Connection closed';
+			              }
+			
+			              conn.onmessage = function(evt) {		 					
+						try {
+							data = JSON.parse(evt.data);
+						}
+			            catch (SyntaxError) {
+			                console.log("Invalid data: " + evt.data);
+			                return;
+			            }
+			            if (data)
+			                on_msg(data);						
+			              }
+				console.log('Connected.');
+				window.onbeforeunload = function() {
+			        			 conn.onclose = function() {};
+			        			 conn.close();
+				}
+			}			
+			
+		]]>
+	</script>	
+		
+	</svg>

@@ -195,7 +195,7 @@ const Index = `
 			// Accesss
 			$('#ubkName tspan').text('#Silo1');
 			$('#ubkAvailable tspan').text( data.analog["percentage"] + '%');
-			$('#ubkCapacity tspan').html(data.analog["percentage"] + 'm&#179;');
+			$('#ubkCapacity tspan').html(data.analog["capacity"] + 'm&#179;');
 			$('#ubkContent tspan').text(data.analog["weight"] +'Kg');
 			$('#ubkVolume tspan').html(data.analog["volume"] + '0m&#179;');
 			updateSiloLevels(data.analog["percentage"]);
