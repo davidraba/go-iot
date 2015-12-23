@@ -236,8 +236,8 @@ const Index = `
             svg.setAttribute('preserveAspectRatio', 'xMinYMin meet')
 
             $(svg)
-                .css('width', '20%')
-                .css('height', '50%')
+                .css('width', '100%')
+                .css('height', '100%')
                 .css('background-color', 'white');			
 			}
 		
