@@ -50,6 +50,9 @@ const Index = `
 			      $('#level5').show();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 80) { 
 			      $('#level10').hide();
@@ -60,6 +63,9 @@ const Index = `
 			      $('#level5').show();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 70) { 
 			      $('#level10').hide();
@@ -70,6 +76,9 @@ const Index = `
 			      $('#level5').show();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 60) { 
 			      $('#level10').hide();
@@ -80,6 +89,9 @@ const Index = `
 			      $('#level5').show();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 50) { 
 			      $('#level10').hide();
@@ -90,6 +102,9 @@ const Index = `
 			      $('#level5').show();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 40) { 
 			      $('#level10').hide();
@@ -100,6 +115,9 @@ const Index = `
 			      $('#level5').show();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 30) { 
 			      $('#level10').hide();
@@ -110,6 +128,9 @@ const Index = `
 			      $('#level5').hide();
 			      $('#level4').show();
 			      $('#level3').hide();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 20) { 
 			      $('#level10').hide();
@@ -120,6 +141,9 @@ const Index = `
 			      $('#level5').hide();
 			      $('#level4').hide();
 			      $('#level3').show();
+			      $('#level2').hide();
+			      $('#level1').hide();				
+			      $('#level0').hide();
 			}
 			else if (percent > 10) { 
 			      $('#level10').hide();
@@ -233,7 +257,7 @@ const Index = `
             svg.removeAttribute('height');
 
             svg.setAttribute('viewbox', '0 0 ' + w + ' ' + h);
-            svg.setAttribute('preserveAspectRatio', 'xMinYMin meet')
+            svg.setAttribute('preserveAspectRatio', 'xMinYMin meet');
 
             $(svg)
                 .css('width', '100%')
