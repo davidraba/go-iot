@@ -679,15 +679,19 @@
 	
 	<svidget:params>
 		<!-- data params -->
-		<svidget:param name="deviceNumber" shortname="device" type="string" coerce="true" group="data" defValue="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" description="" onset="handleDataParamSet" />
-		<svidget:param name="nameSilo" shortname="name" type="string"  coerce="true" group="data" defValue="Silo1" description="" onset="handleDataParamSet" />
+		<svidget:param name="hostname" shortname="hn" type="string" coerce="true" group="data" defValue="" description="" />
+		<svidget:param name="deviceNumber" shortname="device" type="string" coerce="true" group="data" defValue="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" description="" />
+		<svidget:param name="nameSilo" shortname="name" type="string"  coerce="true" group="data" defValue="Silo1" description="" />
 		<svidget:param name="alcadaSilo" shortname="as" type="number" subtype="integer" coerce="true" group="data" defValue="578" description="" />
 		<svidget:param name="diametreSilo" shortname="ds" type="number" subtype="integer" coerce="true" group="data" defvalue="340" description=""  />
 		<svidget:param name="ConeSilo" shortname="cs" type="number" subtype="integer" coerce="true" group="data" defvalue="204" description=""  />
 		<svidget:param name="OffsetDevice" shortname="od" type="number" subtype="integer" coerce="true" group="data" defvalue="68" description="" />
 		<svidget:param name="Densitat" shortname="d"  type="number" subtype="integer" coerce="true" group="data" defvalue="680.0" description=""  />
-		<svidget:param name="Updated" shortname="up"  type="number" subtype="integer" coerce="true" group="data" defvalue="680.0" description="" onset="handleUpdateParamSet" />
+		<svidget:param name="Updated" shortname="up"  type="number" subtype="integer" coerce="true" group="data" defvalue="1" description="" onset="handleUpdateParamSet" />
 	</svidget:params>
+	
+	<script type="application/javascript" xlink:href="http://mwc16.azurewebsites.net/scripts/svidget.min.js"></script>
+	<script type="application/javascript" xlink:href="http://mwc16.azurewebsites.net/scripts/snap.svg-min.js"></script>
 	
     <script type="application/javascript" >
 		<![CDATA[	
@@ -698,6 +702,7 @@
 			}
 
 			// param variables
+			var _hostname = '';
 			var _device = 'UBKD334F21E-3C23-11E5-8494-C3AD4A89321E';
 			var _name = 'Silo1';
 			var _as = 578;
@@ -709,11 +714,12 @@
 	
 			/* Param Events */
 			function loadParams() {
+				console.log('loadParams');
 				var widget = svidget.$;
+				_hostname = checkNull(widget.param("hostname").value(), _hostname);
 				_device = checkNull(widget.param("deviceNumber").value(), _device);
 				_name = checkNull(widget.param("nameSilo").value(), _name);
 				_as = checkNull(widget.param("alcadaSilo").value(), _as);
-				console.log(_as);
 				_ds = checkNull(widget.param("diametreSilo").value(), _ds);
 				_cs = checkNull(widget.param("ConeSilo").value(), _cs);
 				_od = checkNull(widget.param("OffsetDevice").value(), _od);
@@ -723,7 +729,7 @@
 		// this handler is invoked when params Update is set
 		function handleUpdateParamSet(e) {
 			if (!_loaded) return;
-			console.log('handleLabelParamsSet');
+			console.log('handleUpdateParamSet');
 			var widget = svidget.$;
 			loadParams();
 			
@@ -901,13 +907,10 @@
 			        if (!("WebSocket" in window)) {
 			            alert("Use a browser supporting websockets");
 			        }
-				  console.log("ws://localhost:8081/ws?device="+_device+"&as="+_as+"&ds="+_ds+"&cs="+_cs+"&od="+_od+"&d="+_d);
-					var conn = new WebSocket("ws://localhost:8081/ws?device="+_device+"&as="+_as+"&ds="+_ds+"&cs="+_cs+"&od="+_od+"&d="+_d);
-					//var conn = new WebSocket("ws://localhost:8081/ws?device=UBKD334F21E-3C23-11E5-8494-C3AD4A89321E&as=578&ds=340&cs=204&od=68&d=680.0");
-					
+				  console.log("ws://"+_hostname+"/ws?device="+_device+"&as="+_as+"&ds="+_ds+"&cs="+_cs+"&od="+_od+"&d="+_d);
+					var conn = new WebSocket("ws://"+_hostname+"/ws?device="+_device+"&as="+_as+"&ds="+_ds+"&cs="+_cs+"&od="+_od+"&d="+_d);
 			              conn.onclose = function(evt) {
 								console.log('Connection closed.');
-//			                  document.getElementById("fileData").textContent = 'Connection closed';
 			              }
 			
 			              conn.onmessage = function(evt) {		 					
