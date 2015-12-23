@@ -12,7 +12,6 @@ const Index = `
 <div id="svgInlineDiv">
 </div>
 <script type="text/javascript">
-
 		function json_ws( on_msg ) {
 		        if (!("WebSocket" in window)) {
 		            alert("Use a browser supporting websockets");
