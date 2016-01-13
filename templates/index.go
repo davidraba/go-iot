@@ -58,6 +58,32 @@ const Index = `
 	<param name="Densitat" value="480.0" />
 	<param name="Updated" value="1" />
 </object>
+
+<object id="siloChart5" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="100" height="100">
+	<param name="hostname" value="{{.Host}}" />
+	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
+	<param name="nameSilo" value="Silo4" />
+	<param name="alcadaSilo" value="278" />
+	<param name="diametreSilo" value="140" />
+	<param name="ConeSilo" value="204" />
+	<param name="OffsetDevice" value="58"  />
+	<param name="Densitat" value="480.0" />
+	<param name="Updated" value="1" />
+</object>
+
+<object id="siloChart6" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="100" height="100">
+	<param name="hostname" value="{{.Host}}" />
+	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
+	<param name="nameSilo" value="Silo4" />
+	<param name="alcadaSilo" value="278" />
+	<param name="diametreSilo" value="140" />
+	<param name="ConeSilo" value="204" />
+	<param name="OffsetDevice" value="58"  />
+	<param name="Densitat" value="480.0" />
+	<param name="Updated" value="1" />
+</object>
+
 </body>
+
 </html>
 `
