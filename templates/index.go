@@ -13,7 +13,7 @@ const Index = `
 
 <object id="siloChart1" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="400" height="400">
 	<param name="hostname" value="{{.Host}}" />
-	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
+	<param name="deviceNumber" value="UBK83CD7740-BCBB-43B0-B747-BE0152BE728E" />
 	<param name="nameSilo" value="Silo1" />
 	<param name="alcadaSilo" value="578" />
 	<param name="diametreSilo" value="340" />
@@ -25,7 +25,7 @@ const Index = `
 
 <object id="siloChart2" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="400" height="400">
 	<param name="hostname" value="{{.Host}}" />
-	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
+	<param name="deviceNumber" value="UBK39F8600B-BA09-4885-B4B3-B77702BCC0DB" />
 	<param name="nameSilo" value="Silo2" />
 	<param name="alcadaSilo" value="878" />
 	<param name="diametreSilo" value="340" />
@@ -47,41 +47,6 @@ const Index = `
 	<param name="Updated" value="1" />
 </object>
 
-<object id="siloChart4" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="400" height="400">
-	<param name="hostname" value="{{.Host}}" />
-	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
-	<param name="nameSilo" value="Silo4" />
-	<param name="alcadaSilo" value="278" />
-	<param name="diametreSilo" value="140" />
-	<param name="ConeSilo" value="204" />
-	<param name="OffsetDevice" value="58"  />
-	<param name="Densitat" value="480.0" />
-	<param name="Updated" value="1" />
-</object>
-
-<object id="siloChart5" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="100" height="100">
-	<param name="hostname" value="{{.Host}}" />
-	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
-	<param name="nameSilo" value="Silo4" />
-	<param name="alcadaSilo" value="278" />
-	<param name="diametreSilo" value="140" />
-	<param name="ConeSilo" value="204" />
-	<param name="OffsetDevice" value="58"  />
-	<param name="Densitat" value="480.0" />
-	<param name="Updated" value="1" />
-</object>
-
-<object id="siloChart6" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="100" height="100">
-	<param name="hostname" value="{{.Host}}" />
-	<param name="deviceNumber" value="UBKD334F21E-3C23-11E5-8494-C3AD4A89321E" />
-	<param name="nameSilo" value="Silo4" />
-	<param name="alcadaSilo" value="278" />
-	<param name="diametreSilo" value="140" />
-	<param name="ConeSilo" value="204" />
-	<param name="OffsetDevice" value="58"  />
-	<param name="Densitat" value="480.0" />
-	<param name="Updated" value="1" />
-</object>
 
 </body>
 
