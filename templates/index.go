@@ -18,7 +18,7 @@ const Index = `
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="50"  />
+	<param name="OffsetDevice" value="0"  />
 	<param name="Densitat" value="625.0" />
 	<param name="Updated" value="1" />
 </object>
@@ -30,7 +30,7 @@ const Index = `
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="50"  />
+	<param name="OffsetDevice" value="0"  />
 	<param name="Densitat" value="625.0" />
 	<param name="Updated" value="1" />
 </object>
@@ -42,7 +42,7 @@ const Index = `
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="50"  />
+	<param name="OffsetDevice" value="0"  />
 	<param name="Densitat" value="625.0" />
 	<param name="Updated" value="1" />
 </object>
