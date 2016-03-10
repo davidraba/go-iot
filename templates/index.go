@@ -18,8 +18,8 @@ const Index = `
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="0"  />
-	<param name="Densitat" value="625.0" />
+	<param name="OffsetDevice" value="40"  />
+	<param name="Densitat" value="520.0" />
 	<param name="Updated" value="1" />
 </object>
 
@@ -30,8 +30,8 @@ const Index = `
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="0"  />
-	<param name="Densitat" value="625.0" />
+	<param name="OffsetDevice" value="40"  />
+	<param name="Densitat" value="520.0" />
 	<param name="Updated" value="1" />
 </object>
 
@@ -42,20 +42,20 @@ const Index = `
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="0"  />
-	<param name="Densitat" value="625.0" />
+	<param name="OffsetDevice" value="40"  />
+	<param name="Densitat" value="520.0" />
 	<param name="Updated" value="1" />
 </object>
 
 <object id="siloChart4" role="svidget" data="http://{{.Host}}/images/silo.svg" type="image/svg+xml" width="300" height="300">
 	<param name="hostname" value="{{.Host}}" />
 	<param name="deviceNumber" value="UBK39F8600B-BA09-4885-B4B3-B77702BCC0DB" />
-	<param name="nameSilo" value="Silo3" />
+	<param name="nameSilo" value="Silo4" />
 	<param name="alcadaSilo" value="140" />
 	<param name="diametreSilo" value="200" />
 	<param name="ConeSilo" value="150" />
-	<param name="OffsetDevice" value="0"  />
-	<param name="Densitat" value="625.0" />
+	<param name="OffsetDevice" value="40"  />
+	<param name="Densitat" value="520.0" />
 	<param name="Updated" value="1" />
 </object>
 
